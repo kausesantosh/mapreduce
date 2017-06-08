@@ -98,8 +98,7 @@ public class EmpDriverWithSecSort extends Configured implements Tool {
 		job.setReducerClass(EmpReducer.class);
 		job.setSortComparatorClass(EmpKeyComparator.class);
 
-		job.setInputFormatClass(KeyValueTextInputFormat.class);
-
+                job.setPartitionerClass(EmpPartitioner.class);
 
 		job.setOutputKeyClass(EmpKey.class);
 		job.setOutputValueClass(NullWritable.class);
